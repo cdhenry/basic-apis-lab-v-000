@@ -13,11 +13,11 @@ class RepositoriesController < ApplicationController
         end
         body = JSON.parse(@resp.body)
         binding.pry
-        # if @resp.success?
-        #   @results = body["response"]["venues"]
-        # else
-        #   @error = body["meta"]["errorDetail"]
-        # end
+        if @resp.success?
+          @results = body["response"]["venues"]
+        else
+          @error = "There has been an error"
+        end
 
       rescue Faraday::ConnectionFailed
         @error = "There was a timeout. Please try again."
