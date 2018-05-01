@@ -13,12 +13,10 @@ class RepositoriesController < ApplicationController
         end
         body = JSON.parse(@resp.body)
         @results = {}
-        body["items"].each do { |item|
-          binding.pry
-          @results[:name]  item.name
-        }
         if @resp.success?
-          @results << body["items"]["venues"]
+          body["items"].each do { |item|
+            binding.pry
+          }
         else
           @error = "There has been an error"
         end
