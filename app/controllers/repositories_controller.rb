@@ -15,7 +15,6 @@ class RepositoriesController < ApplicationController
         @results = []
         if @resp.success?
           @results = body["items"]
-          binding.pry
         else
           @error = "There has been an error in your request to Github"
         end
