@@ -18,7 +18,7 @@ class RepositoriesController < ApplicationController
             binding.pry
           end
         else
-          @error = "There has been an error"
+          @error = "There has been an error in your request to Github"
         end
 
       rescue Faraday::ConnectionFailed
