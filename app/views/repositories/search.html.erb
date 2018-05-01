@@ -13,7 +13,7 @@
       <li>
         <%= result["name"] %><br>
         <%= result["description"] %><br>
-        URL: <a href="#{<%= @results['html_url'] %>}"><%= @results['html_url'] %></a>
+        <%= link_to @results['html_url'], @results['html_url']%>
       </li>
     <% end %>
     </ul>
