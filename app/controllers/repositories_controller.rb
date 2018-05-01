@@ -14,7 +14,7 @@ class RepositoriesController < ApplicationController
         body = JSON.parse(@resp.body)
         @results = {}
         if @resp.success?
-          body["items"].each do |item| 
+          body["items"].each do |item|
             binding.pry
           end
         else
