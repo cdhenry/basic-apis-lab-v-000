@@ -12,11 +12,9 @@ class RepositoriesController < ApplicationController
           req.params['q'] = query
         end
         body = JSON.parse(@resp.body)
-        @results = {}
+        @results = []
         if @resp.success?
-          body["items"].each do |item|
-            binding.pry
-          end
+          @results = body["items"]
         else
           @error = "There has been an error in your request to Github"
         end
